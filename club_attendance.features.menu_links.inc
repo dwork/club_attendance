@@ -97,33 +97,8 @@ function club_attendance_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '0',
   );
-  // Exported menu link: menu-attendance:node/add/action-trigger-attendance
-  $menu_links['menu-attendance:node/add/action-trigger-attendance'] = array(
-    'menu_name' => 'menu-attendance',
-    'link_path' => 'node/add/action-trigger-attendance',
-    'router_path' => 'node/add/action-trigger-attendance',
-    'link_title' => 'Action Trigger - Attendance',
-    'options' => array(
-      'attributes' => array(
-        'title' => 'The form that triggers the creation of attendance nodes for the current set of active members',
-      ),
-      'menu_views' => array(
-        'name' => FALSE,
-        'display' => FALSE,
-        'arguments' => '',
-        'mlid' => '1662',
-      ),
-    ),
-    'module' => 'system',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '0',
-  );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Action Trigger - Attendance');
   t('Attendance');
   t('Attendance Details');
   t('Attendance Entry');
