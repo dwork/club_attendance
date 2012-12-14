@@ -12,6 +12,7 @@ dependencies[] = list
 dependencies[] = menu
 dependencies[] = rotary_projects_membership
 dependencies[] = taxonomy
+features[content][] = Default Attendance Policy
 features[content][] = doc_attendance
 features[content_menu_links][] = management:admin/structure/menu/manage/menu-attendance
 features[ctools][] = field_group:field_group:1
