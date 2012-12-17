@@ -19,26 +19,10 @@ function club_attendance_ctools_plugin_api() {
  */
 function club_attendance_node_info() {
   $items = array(
-    'action_trigger_attendance' => array(
-      'name' => t('Action Trigger - Attendance'),
-      'base' => 'node_content',
-      'description' => t('The form that triggers the creation of attendance nodes for the current set of active members'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
     'attendance' => array(
       'name' => t('Attendance'),
       'base' => 'node_content',
       'description' => t('Attendance record'),
-      'has_title' => '1',
-      'title_label' => t('Title'),
-      'help' => '',
-    ),
-    'attendance_configuration' => array(
-      'name' => t('Attendance Policy'),
-      'base' => 'node_content',
-      'description' => t('Configuration parameters for attendance reporting'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
