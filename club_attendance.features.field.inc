@@ -951,7 +951,7 @@ function club_attendance_field_default_fields() {
       'bundle' => 'attendance_rules',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Describe the attendance rules in detail. These may be emailed to users if violations are detected.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -972,89 +972,21 @@ function club_attendance_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Attendance Policy',
-      'required' => 1,
+      'label' => 'Body',
+      'required' => FALSE,
       'settings' => array(
-        'display_summary' => 1,
-        'text_processing' => '1',
+        'display_summary' => TRUE,
+        'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '10',
+          'rows' => 20,
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '4',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-attendance_rules-field_attendancerequirement'.
-  $fields['node-attendance_rules-field_attendancerequirement'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_attendancerequirement',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'number',
-      'settings' => array(
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'number_integer',
-    ),
-    'field_instance' => array(
-      'bundle' => 'attendance_rules',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 4,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_attendancerequirement',
-      'label' => 'Attendance Requirement',
-      'required' => 0,
-      'settings' => array(
-        'max' => '100',
-        'min' => '',
-        'prefix' => '',
-        'suffix' => '%',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'number',
-        'settings' => array(),
-        'type' => 'number',
-        'weight' => '8',
+        'weight' => '3',
       ),
     ),
   );
@@ -1152,77 +1084,6 @@ function club_attendance_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-attendance_rules-field_makeupsallowed'.
-  $fields['node-attendance_rules-field_makeupsallowed'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_makeupsallowed',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          'Yes' => 'Yes',
-          'No' => 'No',
-        ),
-        'allowed_values_function' => '',
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'list_text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'attendance_rules',
-      'default_value' => array(
-        0 => array(
-          'value' => 'Yes',
-        ),
-      ),
-      'deleted' => '0',
-      'description' => 'Whether or not makeups are allowed. The specific nature of makeups should be described in the "Attendance Policy".',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => 5,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_makeupsallowed',
-      'label' => 'Makeups Allowed',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '10',
-      ),
-    ),
-  );
-
   // Exported field: 'node-attendance_rules-field_policy_date_range'.
   $fields['node-attendance_rules-field_policy_date_range'] = array(
     'field_config' => array(
@@ -1309,82 +1170,7 @@ function club_attendance_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '3',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-attendance_rules-field_status'.
-  $fields['node-attendance_rules-field_status'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_status',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'member_status',
-            'parent' => '0',
-          ),
-        ),
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'attendance_rules',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'If you are using the "Attendance Trigger" process, select one or more status values to include in the automated member inclusion.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'taxonomy',
-          'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => 3,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_status',
-      'label' => 'Status Inclusions',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '5',
       ),
     ),
   );
@@ -1453,14 +1239,12 @@ function club_attendance_field_default_fields() {
   // Included for use with string extractors like potx.
   t('An expanded description of the event/meeting. This field is for documentation purposes only.');
   t('Attendance');
-  t('Attendance Policy');
-  t('Attendance Requirement');
+  t('Body');
   t('Chapter or club reference');
   t('Chapter/Club');
   t('Club/Chapter');
   t('Date');
   t('Default Type');
-  t('Describe the attendance rules in detail. These may be emailed to users if violations are detected.');
   t('Determines the attendance statistic for reporting purposes - Absent, Present or Not Counted.');
   t('Enter the Chapter/Club to which these rules apply.');
   t('Enter the attendance type for this meeting');
@@ -1468,18 +1252,14 @@ function club_attendance_field_default_fields() {
   t('Enter the meeting or event date. This will trigger a set of "nodes" for each active member for this date and type.');
   t('Enter the policy date range');
   t('Extended Description');
-  t('If you are using the "Attendance Trigger" process, select one or more status values to include in the automated member inclusion.');
-  t('Makeups Allowed');
   t('Meeting/Event Date');
   t('Policy Date Range');
   t('Process Date');
   t('Processed');
   t('Statistic');
-  t('Status Inclusions');
   t('This is an extended description of the event. ');
   t('This is the date this attendance record was processed. ');
   t('Uid');
-  t('Whether or not makeups are allowed. The specific nature of makeups should be described in the "Attendance Policy".');
   t('Whether or not this attendance record has been processed. If you change this field from "Yes" to "No", attendance will be processed again.');
 
   return $fields;
