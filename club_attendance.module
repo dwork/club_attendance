@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Club Attendance feature.
+ */
+
+include_once 'club_attendance.features.inc';
