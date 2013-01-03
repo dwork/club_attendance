@@ -20,9 +20,23 @@ function club_attendance_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_attendance_rules';
+  $strongarm->value = 0;
+  $export['comment_anonymous_attendance_rules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_attendance';
   $strongarm->value = '2';
   $export['comment_attendance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_attendance_rules';
+  $strongarm->value = '1';
+  $export['comment_attendance_rules'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -34,9 +48,23 @@ function club_attendance_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_attendance_rules';
+  $strongarm->value = 1;
+  $export['comment_default_mode_attendance_rules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_attendance';
   $strongarm->value = '50';
   $export['comment_default_per_page_attendance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_attendance_rules';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_attendance_rules'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -48,6 +76,13 @@ function club_attendance_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_attendance_rules';
+  $strongarm->value = 1;
+  $export['comment_form_location_attendance_rules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_attendance';
   $strongarm->value = '1';
   $export['comment_preview_attendance'] = $strongarm;
@@ -55,9 +90,23 @@ function club_attendance_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_attendance_rules';
+  $strongarm->value = '1';
+  $export['comment_preview_attendance_rules'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_attendance';
   $strongarm->value = 1;
   $export['comment_subject_field_attendance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_attendance_rules';
+  $strongarm->value = 1;
+  $export['comment_subject_field_attendance_rules'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -134,6 +183,15 @@ function club_attendance_strongarm() {
         ),
         'path' => array(
           'weight' => '2',
+        ),
+        'metatags' => array(
+          'weight' => '10',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
         ),
       ),
       'display' => array(),
@@ -214,7 +272,6 @@ function club_attendance_strongarm() {
   $strongarm->name = 'node_options_attendance_rules';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_attendance_rules'] = $strongarm;
 
@@ -257,7 +314,7 @@ function club_attendance_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_attendance_rules';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_attendance_rules'] = $strongarm;
 
   return $export;

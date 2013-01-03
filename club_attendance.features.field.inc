@@ -833,11 +833,11 @@ function club_attendance_field_default_fields() {
         'type' => '0',
       ),
       'foreign keys' => array(
-        'node' => array(
+        'users' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'uid',
           ),
-          'table' => 'node',
+          'table' => 'users',
         ),
       ),
       'indexes' => array(
@@ -991,6 +991,133 @@ function club_attendance_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-attendance_rules-field_attendanceadminl'.
+  $fields['node-attendance_rules-field_attendanceadminl'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_attendanceadminl',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'email',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'email',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'If attendance reporting is to be emailed, enter one or more email addresses for the attendance administrators. For example, you might enter the Attendance Committee Chair\'s address and the Organization\'s President for each report.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'email',
+          'settings' => array(),
+          'type' => 'email_default',
+          'weight' => 4,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_attendanceadminl',
+      'label' => 'Admin Email',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'email',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'email_textfield',
+        'weight' => '33',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_rules-field_attendancerequirement'.
+  $fields['node-attendance_rules-field_attendancerequirement'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_attendancerequirement',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'If you have an attendance requirement, this is the Percentage of the total meetings that are required for the term of this policy.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 7,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_attendancerequirement',
+      'label' => 'Attendance Requirement',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '%',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '36',
+      ),
+    ),
+  );
+
   // Exported field: 'node-attendance_rules-field_chapter'.
   $fields['node-attendance_rules-field_chapter'] = array(
     'field_config' => array(
@@ -1080,6 +1207,207 @@ function club_attendance_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '0',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_rules-field_makeup_policy'.
+  $fields['node-attendance_rules-field_makeup_policy'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_makeup_policy',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'Manual Update' => 'Manual Update',
+          'Automatic' => 'Automatic',
+        ),
+        'allowed_values_function' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'If make-ups are allowed, they are treated in one of two ways: (1) Manual Update or (2) Automatic. <UL><LI>Manual Update: with this policy, regular meeting records are updated manually. For example, Rotary clubs allow a make-up two weeks before or two weeks after the missed meeting. In this case, the club secretary would pull up the list of meetings, select an appropriate missed meeting, and update its status from "Absent" to "Makeup". The Attendance Report will report this meeting in the Make-up column, not in the Absent column<LI>Automatic: with this policy, make-ups are added separately. The Attendance Report will report this meeting in the Make-Up column and will automatically reduce the Absent column by 1. </UL> The advantage of "Automatic" is that a full history of missed and made-up meetings is retained. The advantage of "Manual" is that you have control over make-up application.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 10,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_makeup_policy',
+      'label' => 'Makeup Policy',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '39',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_rules-field_makeupsallowed'.
+  $fields['node-attendance_rules-field_makeupsallowed'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_makeupsallowed',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'Yes' => 'Yes',
+          'No' => 'No',
+        ),
+        'allowed_values_function' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Whether or not makeups are allowed. The specific nature of makeups should be described in the "Attendance Policy".',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_makeupsallowed',
+      'label' => 'Makeups Allowed',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '37',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_rules-field_maxmakeups'.
+  $fields['node-attendance_rules-field_maxmakeups'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_maxmakeups',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Maximum number of makeups allowed during this notification period. Enter "0" if there is no set maximum or if makeup meetings are not part of your attendance policy.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 9,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_maxmakeups',
+      'label' => 'Maxinum Number of Makeups Allowed',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '38',
       ),
     ),
   );
@@ -1175,6 +1503,208 @@ function club_attendance_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-attendance_rules-field_status'.
+  $fields['node-attendance_rules-field_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_status',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'member_status',
+            'parent' => '0',
+          ),
+        ),
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'If you are using the "Attendance Trigger" process, select one or more status values to include in the automated member inclusion.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 3,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_status',
+      'label' => 'Status Inclusions',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '32',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_rules-field_test'.
+  $fields['node-attendance_rules-field_test'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_test',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'No' => 'No',
+          'Yes' => 'Yes',
+        ),
+        'allowed_values_function' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Select \'Yes\' to send all email messages to the test email account, usually the webmaster.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 5,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_test',
+      'label' => 'Testing Mode',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '34',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_rules-field_testing_email_address'.
+  $fields['node-attendance_rules-field_testing_email_address'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_testing_email_address',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'email',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'email',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_rules',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'This is email address that emails will be sent to if "Testing Mode" is set to \'Yes\'. If "Test Mode" is set to \'No\', entries in this field will have no effect. An error will be generated if "Test Mode" is set to "Yes" and there is no email address in this field.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'email',
+          'settings' => array(),
+          'type' => 'email_default',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_testing_email_address',
+      'label' => 'Testing Mode Email Address',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'email',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'email_textfield',
+        'weight' => '35',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-attendance-field_statistic'.
   $fields['taxonomy_term-attendance-field_statistic'] = array(
     'field_config' => array(
@@ -1237,8 +1767,10 @@ function club_attendance_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Admin Email');
   t('An expanded description of the event/meeting. This field is for documentation purposes only.');
   t('Attendance');
+  t('Attendance Requirement');
   t('Body');
   t('Chapter or club reference');
   t('Chapter/Club');
@@ -1252,14 +1784,28 @@ function club_attendance_field_default_fields() {
   t('Enter the meeting or event date. This will trigger a set of "nodes" for each active member for this date and type.');
   t('Enter the policy date range');
   t('Extended Description');
+  t('If attendance reporting is to be emailed, enter one or more email addresses for the attendance administrators. For example, you might enter the Attendance Committee Chair\'s address and the Organization\'s President for each report.');
+  t('If make-ups are allowed, they are treated in one of two ways: (1) Manual Update or (2) Automatic. <UL><LI>Manual Update: with this policy, regular meeting records are updated manually. For example, Rotary clubs allow a make-up two weeks before or two weeks after the missed meeting. In this case, the club secretary would pull up the list of meetings, select an appropriate missed meeting, and update its status from "Absent" to "Makeup". The Attendance Report will report this meeting in the Make-up column, not in the Absent column<LI>Automatic: with this policy, make-ups are added separately. The Attendance Report will report this meeting in the Make-Up column and will automatically reduce the Absent column by 1. </UL> The advantage of "Automatic" is that a full history of missed and made-up meetings is retained. The advantage of "Manual" is that you have control over make-up application.');
+  t('If you are using the "Attendance Trigger" process, select one or more status values to include in the automated member inclusion.');
+  t('If you have an attendance requirement, this is the Percentage of the total meetings that are required for the term of this policy.');
+  t('Makeup Policy');
+  t('Makeups Allowed');
+  t('Maximum number of makeups allowed during this notification period. Enter "0" if there is no set maximum or if makeup meetings are not part of your attendance policy.');
+  t('Maxinum Number of Makeups Allowed');
   t('Meeting/Event Date');
   t('Policy Date Range');
   t('Process Date');
   t('Processed');
+  t('Select \'Yes\' to send all email messages to the test email account, usually the webmaster.');
   t('Statistic');
+  t('Status Inclusions');
+  t('Testing Mode');
+  t('Testing Mode Email Address');
   t('This is an extended description of the event. ');
+  t('This is email address that emails will be sent to if "Testing Mode" is set to \'Yes\'. If "Test Mode" is set to \'No\', entries in this field will have no effect. An error will be generated if "Test Mode" is set to "Yes" and there is no email address in this field.');
   t('This is the date this attendance record was processed. ');
   t('Uid');
+  t('Whether or not makeups are allowed. The specific nature of makeups should be described in the "Attendance Policy".');
   t('Whether or not this attendance record has been processed. If you change this field from "Yes" to "No", attendance will be processed again.');
 
   return $fields;
