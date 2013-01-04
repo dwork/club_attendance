@@ -1000,6 +1000,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_appendpolicy',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1055,7 +1058,7 @@ function club_attendance_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '10',
+        'weight' => '13',
       ),
     ),
   );
@@ -1068,6 +1071,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_attendanceadmin',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1112,7 +1118,7 @@ function club_attendance_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '9',
+        'weight' => '16',
       ),
     ),
   );
@@ -1125,6 +1131,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_attendancerequirement',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1280,6 +1289,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_makeup_notation',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -1354,6 +1366,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_makeup_policy',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1422,6 +1437,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_makeupsallowed',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1490,6 +1508,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_maximum_consecutive',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1541,7 +1562,7 @@ function club_attendance_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '12',
+        'weight' => '15',
       ),
     ),
   );
@@ -1554,6 +1575,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_maximum_missed',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1605,7 +1629,7 @@ function club_attendance_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '11',
+        'weight' => '14',
       ),
     ),
   );
@@ -1618,6 +1642,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_maxmakeups',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1682,6 +1709,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_missed_subject',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -1743,7 +1773,7 @@ function club_attendance_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '11',
       ),
     ),
   );
@@ -1756,6 +1786,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_missedyoumessage',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -1818,7 +1851,7 @@ function club_attendance_field_default_fields() {
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '9',
+        'weight' => '12',
       ),
     ),
   );
@@ -1831,6 +1864,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_policy_date_range',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -1919,6 +1955,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_status',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -1991,6 +2030,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_test',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -2046,7 +2088,7 @@ function club_attendance_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '10',
+        'weight' => '17',
       ),
     ),
   );
@@ -2059,6 +2101,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_test_email_address',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -2103,7 +2148,7 @@ function club_attendance_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '11',
+        'weight' => '18',
       ),
     ),
   );
