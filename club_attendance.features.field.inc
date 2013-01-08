@@ -281,6 +281,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_description',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -609,6 +612,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_description',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -635,7 +641,7 @@ function club_attendance_field_default_fields() {
       'bundle' => 'attendance',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'An expanded description of the event/meeting. This field is for documentation purposes only.',
+      'description' => 'Name of Sub/Notes',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -663,7 +669,7 @@ function club_attendance_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => '60',
+          'size' => '40',
         ),
         'type' => 'text_textfield',
         'weight' => '2',
@@ -2221,7 +2227,6 @@ function club_attendance_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('An expanded description of the event/meeting. This field is for documentation purposes only.');
   t('Append Policy');
   t('Attendance');
   t('Attendance Admin Email');
@@ -2256,6 +2261,7 @@ function club_attendance_field_default_fields() {
   t('Missed Email Subject - the subject of the email reminder sent to people who miss meetings.');
   t('Missed Subject');
   t('Missed You Message');
+  t('Name of Sub/Notes');
   t('Policy Date Range');
   t('Process Date');
   t('Processed');

@@ -30,7 +30,7 @@ function club_attendance_content_menu_links_defaults() {
     'menu_name' => 'menu-attendance',
     'link_path' => 'attendance-detail',
     'router_path' => 'attendance-detail',
-    'link_title' => 'Details (Maint)',
+    'link_title' => 'Details (by Member)',
     'options' => array(
       'attributes' => array(
         'title' => '',
@@ -137,7 +137,7 @@ function club_attendance_content_menu_links_defaults() {
   // Included for use with string extractors like potx.
   t('Attendance');
   t('Attendance Policies');
-  t('Details (Maint)');
+  t('Details (by Member)');
   t('Entry (Individual)');
   t('Mass Entry');
   t('Summary Report');
