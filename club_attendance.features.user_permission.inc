@@ -30,6 +30,16 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create attendance_configuration content.
+  $permissions['create attendance_configuration content'] = array(
+    'name' => 'create attendance_configuration content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any action_trigger_attendance content.
   $permissions['delete any action_trigger_attendance content'] = array(
     'name' => 'delete any action_trigger_attendance content',
@@ -44,8 +54,16 @@ function club_attendance_user_default_permissions() {
   $permissions['delete any attendance content'] = array(
     'name' => 'delete any attendance content',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Attendance',
+      1 => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any attendance_configuration content.
+  $permissions['delete any attendance_configuration content'] = array(
+    'name' => 'delete any attendance_configuration content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -62,6 +80,16 @@ function club_attendance_user_default_permissions() {
   // Exported permission: delete own attendance content.
   $permissions['delete own attendance content'] = array(
     'name' => 'delete own attendance content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own attendance_configuration content.
+  $permissions['delete own attendance_configuration content'] = array(
+    'name' => 'delete own attendance_configuration content',
     'roles' => array(
       0 => 'Attendance',
       1 => 'administrator',
@@ -89,6 +117,16 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any attendance_configuration content.
+  $permissions['edit any attendance_configuration content'] = array(
+    'name' => 'edit any attendance_configuration content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own action_trigger_attendance content.
   $permissions['edit own action_trigger_attendance content'] = array(
     'name' => 'edit own action_trigger_attendance content',
@@ -102,6 +140,16 @@ function club_attendance_user_default_permissions() {
   // Exported permission: edit own attendance content.
   $permissions['edit own attendance content'] = array(
     'name' => 'edit own attendance content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own attendance_configuration content.
+  $permissions['edit own attendance_configuration content'] = array(
+    'name' => 'edit own attendance_configuration content',
     'roles' => array(
       0 => 'Attendance',
       1 => 'administrator',

@@ -11,14 +11,14 @@ function club_attendance_content_defaults() {
   $content = array();
 
   $content['Default Attendance Policy'] = (object) array(
-    'exported_path' => 'content/attendance-policy',
+    'exported_path' => 'content/attendance-policy-0',
     'title' => 'Attendance Policy',
     'status' => '1',
     'promote' => '0',
     'sticky' => '0',
     'type' => 'attendance_configuration',
     'language' => 'und',
-    'created' => '1349370394',
+    'created' => '1357671186',
     'comment' => '1',
     'translate' => '0',
     'machine_name' => 'Default Attendance Policy',
@@ -62,7 +62,7 @@ function club_attendance_content_defaults() {
     'field_chapter' => array(
       'und' => array(
         0 => array(
-          'target_id' => '5',
+          'target_id' => '9',
         ),
       ),
     ),

@@ -849,6 +849,35 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nid']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['nid']['link_to_node'] = 0;
+  /* Field: Club/Chapter (hidden) */
+  $handler->display->display_options['fields']['field_chapter']['id'] = 'field_chapter';
+  $handler->display->display_options['fields']['field_chapter']['table'] = 'field_data_field_chapter';
+  $handler->display->display_options['fields']['field_chapter']['field'] = 'field_chapter';
+  $handler->display->display_options['fields']['field_chapter']['ui_name'] = 'Club/Chapter (hidden)';
+  $handler->display->display_options['fields']['field_chapter']['label'] = '';
+  $handler->display->display_options['fields']['field_chapter']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_chapter']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_chapter']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_chapter']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_chapter']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_chapter']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_chapter']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_chapter']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_chapter']['field_api_classes'] = 0;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
   $handler->display->display_options['fields']['title_1']['table'] = 'node';
@@ -983,23 +1012,6 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Field: Chapter/Club (field_chapter) */
-  $handler->display->display_options['arguments']['field_chapter_target_id']['id'] = 'field_chapter_target_id';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['table'] = 'field_data_field_chapter';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['field'] = 'field_chapter_target_id';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['default_argument_options']['code'] = 'global $user;
-$node = user_load($user->uid);
-if (isset($node->field_chapter[\'und\'][0][\'target_id\'])) {
- return $node->field_chapter[\'und\'][0][\'target_id\'];
-} ';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['field_chapter_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_chapter_target_id']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['field_chapter_target_id']['not'] = 0;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1014,6 +1026,23 @@ if (isset($node->field_chapter[\'und\'][0][\'target_id\'])) {
   $handler->display->display_options['filters']['type']['value'] = array(
     'attendance_configuration' => 'attendance_configuration',
   );
+  /* Filter criterion: Superuser or Policies for this admin only */
+  $handler->display->display_options['filters']['php']['id'] = 'php';
+  $handler->display->display_options['filters']['php']['table'] = 'views';
+  $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['ui_name'] = 'Superuser or Policies for this admin only';
+  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['filters']['php']['php_filter'] = 'global $user;
+$usernode = user_load($user->uid);
+if ($user->uid == 1) {
+  return FALSE;    // display ALL records
+} else {
+  $node = node_load($data->nid);
+  if ($node->field_chapter[\'und\'][0][\'target_id\'] == $usernode->field_chapter[\'und\'][0][\'target_id\']) {
+    return FALSE;
+  }
+}
+return TRUE;';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
