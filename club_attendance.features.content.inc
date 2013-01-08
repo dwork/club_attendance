@@ -19,7 +19,7 @@ function club_attendance_content_defaults() {
     'type' => 'attendance_configuration',
     'language' => 'und',
     'created' => '1349370394',
-    'comment' => '0',
+    'comment' => '1',
     'translate' => '0',
     'machine_name' => 'Default Attendance Policy',
     'body' => array(
@@ -35,6 +35,53 @@ function club_attendance_content_defaults() {
         ),
       ),
     ),
+    'field_appendpolicy' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Yes',
+        ),
+      ),
+    ),
+    'field_attendanceadmin' => array(
+      'und' => array(
+        0 => array(
+          'email' => 'dwork@oip.net',
+        ),
+        1 => array(
+          'email' => 'orders@dirtcheapcopies.com',
+        ),
+      ),
+    ),
+    'field_attendancerequirement' => array(
+      'und' => array(
+        0 => array(
+          'value' => '50',
+        ),
+      ),
+    ),
+    'field_chapter' => array(
+      'und' => array(
+        0 => array(
+          'target_id' => '5',
+        ),
+      ),
+    ),
+    'field_makeup_notation' => array(
+      'und' => array(
+        0 => array(
+          'value' => '* Make-ups are not included in attendance totals',
+          'format' => NULL,
+          'safe_value' => '* Make-ups are not included in attendance totals',
+        ),
+      ),
+    ),
+    'field_makeup_policy' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Manual Update',
+        ),
+      ),
+    ),
     'field_makeupsallowed' => array(
       'und' => array(
         0 => array(
@@ -42,10 +89,33 @@ function club_attendance_content_defaults() {
         ),
       ),
     ),
+    'field_maximum_consecutive' => array(
+      'und' => array(
+        0 => array(
+          'value' => '5',
+        ),
+      ),
+    ),
+    'field_maximum_missed' => array(
+      'und' => array(
+        0 => array(
+          'value' => '13',
+        ),
+      ),
+    ),
     'field_maxmakeups' => array(
       'und' => array(
         0 => array(
           'value' => '8',
+        ),
+      ),
+    ),
+    'field_missed_subject' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'We Missed You!',
+          'format' => NULL,
+          'safe_value' => 'We Missed You!',
         ),
       ),
     ),
@@ -64,48 +134,28 @@ Your club',
         ),
       ),
     ),
-    'field_attendancerequirement' => array(
+    'field_policy_date_range' => array(
       'und' => array(
         0 => array(
-          'value' => '50',
+          'value' => '2013-01-01 00:00:00',
+          'value2' => '2013-12-31 00:00:00',
+          'timezone' => 'America/Los_Angeles',
+          'timezone_db' => 'America/Los_Angeles',
+          'date_type' => 'datetime',
         ),
       ),
     ),
-    'field_maximum_missed' => array(
+    'field_status' => array(
       'und' => array(
         0 => array(
-          'value' => '13',
-        ),
-      ),
-    ),
-    'field_maximum_consecutive' => array(
-      'und' => array(
-        0 => array(
-          'value' => '5',
-        ),
-      ),
-    ),
-    'field_attendanceadmin' => array(
-      'und' => array(
-        0 => array(
-          'email' => 'dwork@oip.net',
-        ),
-        1 => array(
-          'email' => 'orders@dirtcheapcopies.com',
-        ),
-      ),
-    ),
-    'field_appendpolicy' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'Yes',
+          'tid' => '2',
         ),
       ),
     ),
     'field_test' => array(
       'und' => array(
         0 => array(
-          'value' => 'No',
+          'value' => 'Yes',
         ),
       ),
     ),
@@ -116,63 +166,10 @@ Your club',
         ),
       ),
     ),
-    'field_policy_date_range' => array(
-      'und' => array(
-        0 => array(
-          'value' => '2012-01-01 00:00:00',
-          'value2' => '2012-12-31 00:00:00',
-          'timezone' => 'America/Los_Angeles',
-          'timezone_db' => 'America/Los_Angeles',
-          'date_type' => 'datetime',
-        ),
-      ),
-    ),
-    'field_missed_subject' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'We Missed You!',
-          'format' => NULL,
-          'safe_value' => 'We Missed You!',
-        ),
-      ),
-    ),
-    'field_makeup_policy' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'Manual Update',
-        ),
-      ),
-    ),
-    'field_makeup_notation' => array(
-      'und' => array(
-        0 => array(
-          'value' => '* Make-ups are not included in attendance totals',
-          'format' => NULL,
-          'safe_value' => '* Make-ups are not included in attendance totals',
-        ),
-      ),
-    ),
-    'field_chapter' => array(
-      'und' => array(
-        0 => array(
-          'target_id' => '260',
-        ),
-      ),
-    ),
-    'field_status' => array(
-      'und' => array(
-        0 => array(
-          'tid' => '35',
-        ),
-        1 => array(
-          'tid' => '37',
-        ),
-      ),
-    ),
   );
 
   $content['doc_attendance'] = (object) array(
-    'exported_path' => 'help/documents/attendance',
+    'exported_path' => 'content/attendance',
     'title' => 'Attendance',
     'status' => '1',
     'promote' => '0',
