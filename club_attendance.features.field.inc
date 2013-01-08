@@ -18,6 +18,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_attendance',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -49,7 +52,7 @@ function club_attendance_field_default_fields() {
       'bundle' => 'action_trigger_attendance',
       'default_value' => array(
         0 => array(
-          'tid' => '53',
+          'tid' => '9',
         ),
       ),
       'deleted' => '0',
@@ -348,6 +351,9 @@ function club_attendance_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_attendance',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
