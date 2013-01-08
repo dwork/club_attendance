@@ -267,37 +267,6 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['field_suffix']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_suffix']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['field_suffix']['field_api_classes'] = 0;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_date']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_date']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_date']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_date']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['field_date']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_date']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_date']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_date']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_repeat_rule' => 'show',
-  );
-  $handler->display->display_options['fields']['field_date']['field_api_classes'] = 0;
   /* Field: Title (hidden) */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -375,6 +344,37 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing_1']['hide_alter_empty'] = 0;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_date']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_date']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_date']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_date']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_date']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_date']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_date']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_date']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_date']['field_api_classes'] = 0;
   /* Field: Content: Attendance */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
@@ -422,6 +422,16 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
+  /* Sort criterion: User: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['relationship'] = 'field_uid_target_id';
+  /* Sort criterion: User: First Name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['relationship'] = 'field_uid_target_id';
   /* Sort criterion: Content: Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
@@ -469,19 +479,19 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['multiple'] = FALSE;
   $handler->display->display_options['filters']['field_date_value']['year_range'] = '-3:+0';
-  /* Filter criterion: User: Name */
-  $handler->display->display_options['filters']['uid']['id'] = 'uid';
-  $handler->display->display_options['filters']['uid']['table'] = 'users';
-  $handler->display->display_options['filters']['uid']['field'] = 'uid';
-  $handler->display->display_options['filters']['uid']['relationship'] = 'field_uid_target_id';
-  $handler->display->display_options['filters']['uid']['value'] = '';
-  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Name';
-  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
-  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
-  $handler->display->display_options['filters']['uid']['expose']['multiple'] = FALSE;
-  $handler->display->display_options['filters']['uid']['expose']['reduce'] = 0;
+  /* Filter criterion: User: Last Name (field_last_name) */
+  $handler->display->display_options['filters']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['filters']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['relationship'] = 'field_uid_target_id';
+  $handler->display->display_options['filters']['field_last_name_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['operator_id'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['label'] = 'Last Name (or part)';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['operator'] = 'field_last_name_value_op';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['identifier'] = 'field_last_name_value';
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['required'] = 0;
+  $handler->display->display_options['filters']['field_last_name_value']['expose']['multiple'] = FALSE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
