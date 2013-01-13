@@ -422,12 +422,12 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  /* Sort criterion: User: Last Name (field_last_name) */
+  /* Sort criterion: Field: Last Name (field_last_name) */
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['relationship'] = 'field_uid_target_id';
-  /* Sort criterion: User: First Name (field_first_name) */
+  /* Sort criterion: Field: First Name (field_first_name) */
   $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
   $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
   $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
@@ -479,7 +479,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['multiple'] = FALSE;
   $handler->display->display_options['filters']['field_date_value']['year_range'] = '-3:+0';
-  /* Filter criterion: User: Last Name (field_last_name) */
+  /* Filter criterion: Field: Last Name (field_last_name) */
   $handler->display->display_options['filters']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['filters']['field_last_name_value']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['filters']['field_last_name_value']['field'] = 'field_last_name_value';
@@ -522,7 +522,10 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['style_plugin'] = 'table';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_uid_target_id']['id'] = 'field_uid_target_id';
@@ -674,7 +677,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Concatenated Member name ';
   $handler->display->display_options['fields']['nothing']['label'] = 'Member Name';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_first_name] [field_middle_initial] [field_last_name] [field_suffix]<BR>Meeting: [title]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_first_name] [field_middle_initial] [field_last_name] [field_suffix]<BR>[title]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
@@ -1147,6 +1150,98 @@ return TRUE;';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_first_name' => 'field_first_name',
+    'field_middle_initial' => 'field_middle_initial',
+    'field_last_name' => 'field_last_name',
+    'field_suffix' => 'field_suffix',
+    'nothing' => 'nothing',
+    'field_uid' => 'field_uid',
+    'uid' => 'uid',
+    'php_5' => 'php_5',
+    'php' => 'php',
+    'php_1' => 'php_1',
+    'php_2' => 'php_2',
+    'php_3' => 'php_3',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_first_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_middle_initial' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_last_name' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_suffix' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_uid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'uid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_5' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_2' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_3' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = 1;
+  $handler->display->display_options['style_options']['sticky'] = 0;
+  $handler->display->display_options['style_options']['empty_table'] = 0;
   /* Footer: Makeup notification */
   $handler->display->display_options['footer']['php']['id'] = 'php';
   $handler->display->display_options['footer']['php']['table'] = 'views';
@@ -1170,11 +1265,31 @@ return TRUE;';
   $handler->display->display_options['relationships']['field_uid_target_id']['table'] = 'field_data_field_uid';
   $handler->display->display_options['relationships']['field_uid_target_id']['field'] = 'field_uid_target_id';
   $handler->display->display_options['relationships']['field_uid_target_id']['required'] = 1;
-  /* Field: User: First Name */
+  /* Field: Field: First Name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
   $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['relationship'] = 'field_uid_target_id';
+  $handler->display->display_options['fields']['field_first_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_first_name']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_first_name']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_first_name']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_first_name']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_first_name']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_first_name']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_first_name']['field_api_classes'] = 0;
   /* Field: Middle Name (hidden) */
   $handler->display->display_options['fields']['field_middle_initial']['id'] = 'field_middle_initial';
   $handler->display->display_options['fields']['field_middle_initial']['table'] = 'field_data_field_middle_initial';

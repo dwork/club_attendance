@@ -93,7 +93,7 @@ function club_attendance_field_default_fields() {
   $fields['node-action_trigger_attendance-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
@@ -126,7 +126,6 @@ function club_attendance_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_date:value',
             'property' => 'title',
             'type' => 'property',
           ),
@@ -429,7 +428,7 @@ function club_attendance_field_default_fields() {
   $fields['node-attendance-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
@@ -462,7 +461,6 @@ function club_attendance_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_date:value',
             'property' => 'title',
             'type' => 'property',
           ),
@@ -1206,7 +1204,7 @@ function club_attendance_field_default_fields() {
   $fields['node-attendance_configuration-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
@@ -1239,7 +1237,6 @@ function club_attendance_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_date:value',
             'property' => 'title',
             'type' => 'property',
           ),

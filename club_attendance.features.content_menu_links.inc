@@ -47,17 +47,17 @@ function club_attendance_content_menu_links_defaults() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-50',
+    'weight' => '-47',
   );
   // Exported menu link: menu-attendance:attendance-editable
   $menu_links['menu-attendance:attendance-editable'] = array(
     'menu_name' => 'menu-attendance',
     'link_path' => 'attendance-editable',
     'router_path' => 'attendance-editable',
-    'link_title' => 'Entry (Individual)',
+    'link_title' => 'Maintenance (Indv)',
     'options' => array(
       'attributes' => array(
-        'title' => '',
+        'title' => 'Maintenance of attendance records by date range',
       ),
       'menu_views' => array(
         'name' => FALSE,
@@ -72,6 +72,7 @@ function club_attendance_content_menu_links_defaults() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-49',
+    'parent_path' => 'node/add/attendance-editable',
   );
   // Exported menu link: menu-attendance:attendance-summary-by-user
   $menu_links['menu-attendance:attendance-summary-by-user'] = array(
@@ -95,7 +96,25 @@ function club_attendance_content_menu_links_defaults() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-48',
+    'weight' => '-45',
+  );
+  // Exported menu link: menu-attendance:node/38
+  $menu_links['menu-attendance:node/38'] = array(
+    'menu_name' => 'menu-attendance',
+    'link_path' => 'node-name/attendance_documentation',
+    'router_path' => 'node/%',
+    'link_title' => 'Attendance Documentation',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Attendance documentation and menu links',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-50',
   );
   // Exported menu link: menu-attendance:node/add/action-trigger-attendance
   $menu_links['menu-attendance:node/add/action-trigger-attendance'] = array(
@@ -113,7 +132,45 @@ function club_attendance_content_menu_links_defaults() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-47',
+    'weight' => '-48',
+    'parent_path' => 'node/add/attendance-editable',
+  );
+  // Exported menu link: menu-attendance:node/add/attendance
+  $menu_links['menu-attendance:node/add/attendance'] = array(
+    'menu_name' => 'menu-attendance',
+    'link_path' => 'node/add/attendance',
+    'router_path' => 'node/add/attendance',
+    'link_title' => 'Add (Individual)',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Add an individual attendance record. Useful for recording mid-week makeups',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-50',
+    'parent_path' => 'node/add/attendance-editable',
+  );
+  // Exported menu link: menu-attendance:node/add/attendance-editable
+  $menu_links['menu-attendance:node/add/attendance-editable'] = array(
+    'menu_name' => 'menu-attendance',
+    'link_path' => 'node/add/attendance-editable',
+    'router_path' => 'node/add',
+    'link_title' => 'Editing',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '1',
+    'expanded' => '1',
+    'weight' => '-48',
   );
   // Exported menu link: menu-attendance:view-attendance-policy
   $menu_links['menu-attendance:view-attendance-policy'] = array(
@@ -131,14 +188,17 @@ function club_attendance_content_menu_links_defaults() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-46',
+    'weight' => '-49',
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add (Individual)');
   t('Attendance');
+  t('Attendance Documentation');
   t('Attendance Policies');
   t('Details (by Member)');
-  t('Entry (Individual)');
+  t('Editing');
+  t('Maintenance (Indv)');
   t('Mass Entry');
   t('Summary Report');
 
