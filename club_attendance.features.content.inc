@@ -10,176 +10,18 @@
 function club_attendance_content_defaults() {
   $content = array();
 
-  $content['Default Attendance Policy'] = (object) array(
-    'exported_path' => 'content/attendance-policy-0',
-    'title' => 'Attendance Policy',
-    'status' => '1',
-    'promote' => '0',
-    'sticky' => '0',
-    'type' => 'attendance_configuration',
-    'language' => 'und',
-    'created' => '1357671186',
-    'comment' => '1',
-    'translate' => '0',
-    'machine_name' => 'Default Attendance Policy',
-    'body' => array(
-      'und' => array(
-        0 => array(
-          'value' => '<p>Attendance Policy here.</p>
-',
-          'summary' => '',
-          'format' => 'filtered_html',
-          'safe_value' => '<p>Attendance Policy here.</p>
-',
-          'safe_summary' => '',
-        ),
-      ),
-    ),
-    'field_appendpolicy' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'Yes',
-        ),
-      ),
-    ),
-    'field_attendanceadmin' => array(
-      'und' => array(
-        0 => array(
-          'email' => 'dwork@oip.net',
-        ),
-        1 => array(
-          'email' => 'orders@dirtcheapcopies.com',
-        ),
-      ),
-    ),
-    'field_attendancerequirement' => array(
-      'und' => array(
-        0 => array(
-          'value' => '50',
-        ),
-      ),
-    ),
-    'field_chapter' => array(
-      'und' => array(
-        0 => array(
-          'target_id' => '9',
-        ),
-      ),
-    ),
-    'field_makeup_notation' => array(
-      'und' => array(
-        0 => array(
-          'value' => '* Make-ups are not included in attendance totals',
-          'format' => NULL,
-          'safe_value' => '* Make-ups are not included in attendance totals',
-        ),
-      ),
-    ),
-    'field_makeup_policy' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'Manual Update',
-        ),
-      ),
-    ),
-    'field_makeupsallowed' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'Yes',
-        ),
-      ),
-    ),
-    'field_maximum_consecutive' => array(
-      'und' => array(
-        0 => array(
-          'value' => '5',
-        ),
-      ),
-    ),
-    'field_maximum_missed' => array(
-      'und' => array(
-        0 => array(
-          'value' => '13',
-        ),
-      ),
-    ),
-    'field_maxmakeups' => array(
-      'und' => array(
-        0 => array(
-          'value' => '8',
-        ),
-      ),
-    ),
-    'field_missed_subject' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'We Missed You!',
-          'format' => NULL,
-          'safe_value' => 'We Missed You!',
-        ),
-      ),
-    ),
-    'field_missedyoumessage' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'We missed you at the last meeting. Let us know what\'s up with that???
---
-Administrator
-Your club',
-          'format' => NULL,
-          'safe_value' => 'We missed you at the last meeting. Let us know what&#039;s up with that???
---
-Administrator
-Your club',
-        ),
-      ),
-    ),
-    'field_policy_date_range' => array(
-      'und' => array(
-        0 => array(
-          'value' => '2013-01-01 00:00:00',
-          'value2' => '2013-12-31 00:00:00',
-          'timezone' => 'America/Los_Angeles',
-          'timezone_db' => 'America/Los_Angeles',
-          'date_type' => 'datetime',
-        ),
-      ),
-    ),
-    'field_status' => array(
-      'und' => array(
-        0 => array(
-          'tid' => '2',
-        ),
-      ),
-    ),
-    'field_test' => array(
-      'und' => array(
-        0 => array(
-          'value' => 'Yes',
-        ),
-      ),
-    ),
-    'field_test_email_address' => array(
-      'und' => array(
-        0 => array(
-          'email' => 'dwork@oip.net',
-        ),
-      ),
-    ),
-  );
-
-  $content['attendance_documentation'] = (object) array(
+  $content['Attendance Docs'] = (object) array(
     'exported_path' => 'content/attendance-documentation',
     'title' => 'Attendance Documentation',
     'status' => '1',
     'promote' => '0',
     'sticky' => '0',
-    'type' => 'page',
+    'type' => 'documentation',
     'language' => 'und',
-    'created' => '1358020739',
+    'created' => '1358203870',
     'comment' => '1',
     'translate' => '0',
-    'machine_name' => 'attendance_documentation',
+    'machine_name' => 'Attendance Docs',
     'body' => array(
       'und' => array(
         0 => array(
@@ -334,10 +176,161 @@ Recording attendance can be done individually or using the "mass attendance proc
         ),
       ),
     ),
+  );
+
+  $content['Default Attendance Policy'] = (object) array(
+    'exported_path' => 'content/attendance-policy-0',
+    'title' => 'Attendance Policy',
+    'status' => '1',
+    'promote' => '0',
+    'sticky' => '0',
+    'type' => 'attendance_configuration',
+    'language' => 'und',
+    'created' => '1357671186',
+    'comment' => '1',
+    'translate' => '0',
+    'machine_name' => 'Default Attendance Policy',
+    'body' => array(
+      'und' => array(
+        0 => array(
+          'value' => '<p>Attendance Policy here.</p>
+',
+          'summary' => '',
+          'format' => 'filtered_html',
+          'safe_value' => '<p>Attendance Policy here.</p>
+',
+          'safe_summary' => '',
+        ),
+      ),
+    ),
+    'field_appendpolicy' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Yes',
+        ),
+      ),
+    ),
+    'field_attendanceadmin' => array(
+      'und' => array(
+        0 => array(
+          'email' => 'dwork@oip.net',
+        ),
+        1 => array(
+          'email' => 'orders@dirtcheapcopies.com',
+        ),
+      ),
+    ),
+    'field_attendancerequirement' => array(
+      'und' => array(
+        0 => array(
+          'value' => '50',
+        ),
+      ),
+    ),
     'field_chapter' => array(
       'und' => array(
         0 => array(
-          'target_id' => '5',
+          'target_id' => '9',
+        ),
+      ),
+    ),
+    'field_makeup_notation' => array(
+      'und' => array(
+        0 => array(
+          'value' => '* Make-ups are not included in attendance totals',
+          'format' => NULL,
+          'safe_value' => '* Make-ups are not included in attendance totals',
+        ),
+      ),
+    ),
+    'field_makeup_policy' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Manual Update',
+        ),
+      ),
+    ),
+    'field_makeupsallowed' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Yes',
+        ),
+      ),
+    ),
+    'field_maximum_consecutive' => array(
+      'und' => array(
+        0 => array(
+          'value' => '5',
+        ),
+      ),
+    ),
+    'field_maximum_missed' => array(
+      'und' => array(
+        0 => array(
+          'value' => '13',
+        ),
+      ),
+    ),
+    'field_maxmakeups' => array(
+      'und' => array(
+        0 => array(
+          'value' => '8',
+        ),
+      ),
+    ),
+    'field_missed_subject' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'We Missed You!',
+          'format' => NULL,
+          'safe_value' => 'We Missed You!',
+        ),
+      ),
+    ),
+    'field_missedyoumessage' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'We missed you at the last meeting. Let us know what\'s up with that???
+--
+Administrator
+Your club',
+          'format' => NULL,
+          'safe_value' => 'We missed you at the last meeting. Let us know what&#039;s up with that???
+--
+Administrator
+Your club',
+        ),
+      ),
+    ),
+    'field_policy_date_range' => array(
+      'und' => array(
+        0 => array(
+          'value' => '2013-01-01 00:00:00',
+          'value2' => '2013-12-31 00:00:00',
+          'timezone' => 'America/Los_Angeles',
+          'timezone_db' => 'America/Los_Angeles',
+          'date_type' => 'datetime',
+        ),
+      ),
+    ),
+    'field_status' => array(
+      'und' => array(
+        0 => array(
+          'tid' => '2',
+        ),
+      ),
+    ),
+    'field_test' => array(
+      'und' => array(
+        0 => array(
+          'value' => 'Yes',
+        ),
+      ),
+    ),
+    'field_test_email_address' => array(
+      'und' => array(
+        0 => array(
+          'email' => 'dwork@oip.net',
         ),
       ),
     ),

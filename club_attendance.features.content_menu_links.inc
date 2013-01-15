@@ -96,17 +96,17 @@ function club_attendance_content_menu_links_defaults() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-45',
+    'weight' => '-46',
   );
-  // Exported menu link: menu-attendance:node/38
-  $menu_links['menu-attendance:node/38'] = array(
+  // Exported menu link: menu-attendance:node/55
+  $menu_links['menu-attendance:node/55'] = array(
     'menu_name' => 'menu-attendance',
-    'link_path' => 'node-name/attendance_documentation',
+    'link_path' => 'node-name/Attendance Docs',
     'router_path' => 'node/%',
     'link_title' => 'Attendance Documentation',
     'options' => array(
       'attributes' => array(
-        'title' => 'Attendance documentation and menu links',
+        'title' => '',
       ),
     ),
     'module' => 'menu',
@@ -133,6 +133,25 @@ function club_attendance_content_menu_links_defaults() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-48',
+    'parent_path' => 'node/add/attendance-editable',
+  );
+  // Exported menu link: menu-attendance:node/add/action-trigger-mass-makeup
+  $menu_links['menu-attendance:node/add/action-trigger-mass-makeup'] = array(
+    'menu_name' => 'menu-attendance',
+    'link_path' => 'node/add/action-trigger-mass-makeup',
+    'router_path' => 'node/add/action-trigger-mass-makeup',
+    'link_title' => 'Mass Makeups',
+    'options' => array(
+      'attributes' => array(
+        'title' => 'Mass entry of makeups -- requires entry of individual member names. This process does not edit for duplications.',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '0',
     'parent_path' => 'node/add/attendance-editable',
   );
   // Exported menu link: menu-attendance:node/add/attendance
@@ -200,6 +219,7 @@ function club_attendance_content_menu_links_defaults() {
   t('Editing');
   t('Maintenance (Indv)');
   t('Mass Entry');
+  t('Mass Makeups');
   t('Summary Report');
 
 

@@ -344,7 +344,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing_1']['hide_alter_empty'] = 0;
-  /* Field: Content: Date */
+  /* Field: Content: Meeting/Event Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -375,10 +375,11 @@ function club_attendance_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_date']['field_api_classes'] = 0;
-  /* Field: Content: Attendance */
+  /* Field: Content: Default Type */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
+  $handler->display->display_options['fields']['field_attendance']['label'] = 'Attendance Type';
   $handler->display->display_options['fields']['field_attendance']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_attendance']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_attendance']['alter']['absolute'] = 0;
@@ -432,7 +433,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
   $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
   $handler->display->display_options['sorts']['field_first_name_value']['relationship'] = 'field_uid_target_id';
-  /* Sort criterion: Content: Date (field_date) */
+  /* Sort criterion: Content: Meeting/Event Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -467,7 +468,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'attendance' => 'attendance',
   );
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Meeting/Event Date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -532,7 +533,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['relationships']['field_uid_target_id']['table'] = 'field_data_field_uid';
   $handler->display->display_options['relationships']['field_uid_target_id']['field'] = 'field_uid_target_id';
   $handler->display->display_options['relationships']['field_uid_target_id']['required'] = 1;
-  /* Relationship: Content: Attendance (field_attendance) */
+  /* Relationship: Content: Default Type (field_attendance) */
   $handler->display->display_options['relationships']['field_attendance_tid']['id'] = 'field_attendance_tid';
   $handler->display->display_options['relationships']['field_attendance_tid']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['relationships']['field_attendance_tid']['field'] = 'field_attendance_tid';
@@ -695,10 +696,11 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  /* Field: Content: Date */
+  /* Field: Content: Meeting/Event Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_date']['alter']['absolute'] = 0;
@@ -731,7 +733,7 @@ function club_attendance_views_default_views() {
     ),
   );
   $handler->display->display_options['fields']['field_date']['field_api_classes'] = 0;
-  /* Field: Content: Attendance */
+  /* Field: Content: Default Type */
   $handler->display->display_options['fields']['field_attendance']['id'] = 'field_attendance';
   $handler->display->display_options['fields']['field_attendance']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['fields']['field_attendance']['field'] = 'field_attendance';
@@ -790,16 +792,40 @@ function club_attendance_views_default_views() {
     'fallback_format' => 'text_default',
   );
   $handler->display->display_options['fields']['field_description']['field_api_classes'] = 0;
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = 'Delete';
+  $handler->display->display_options['fields']['delete_node']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['delete_node']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['delete_node']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['delete_node']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['delete_node']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['delete_node']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['delete_node']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['delete_node']['hide_alter_empty'] = 1;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Sort criterion: Content: Date (field_date) */
+  /* Sort criterion: Content: Meeting/Event Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_date_value']['expose']['label'] = 'Meeting/Event Date';
   /* Contextual filter: Field: Chapter/Club (field_chapter) */
   $handler->display->display_options['arguments']['field_chapter_target_id']['id'] = 'field_chapter_target_id';
   $handler->display->display_options['arguments']['field_chapter_target_id']['table'] = 'field_data_field_chapter';
@@ -831,7 +857,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'attendance' => 'attendance',
   );
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Meeting/Event Date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -843,7 +869,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['multiple'] = FALSE;
   $handler->display->display_options['filters']['field_date_value']['year_range'] = '-2:+0';
-  /* Filter criterion: Content: Attendance (field_attendance) */
+  /* Filter criterion: Content: Default Type (field_attendance) */
   $handler->display->display_options['filters']['field_attendance_tid']['id'] = 'field_attendance_tid';
   $handler->display->display_options['filters']['field_attendance_tid']['table'] = 'field_data_field_attendance';
   $handler->display->display_options['filters']['field_attendance_tid']['field'] = 'field_attendance_tid';
@@ -1665,7 +1691,7 @@ return TRUE;';
   $handler->display->display_options['filters']['type']['value'] = array(
     'attendance' => 'attendance',
   );
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Meeting/Event Date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';

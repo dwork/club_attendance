@@ -65,6 +65,12 @@ function club_attendance_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -84,7 +90,90 @@ function club_attendance_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-action_trigger_attendance-field_attendance_title'.
+  $fields['node-action_trigger_attendance-field_attendance_title'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_attendance_title',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'action_trigger_attendance',
+      'default_value' => array(
+        0 => array(
+          'value' => 'Regular Meeting',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'The title of the attendance (e.g. "Regular Meeting", "WCS Meeting", "Mixer", etc.)',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 5,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_attendance_title',
+      'label' => 'Attendance Title',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '3',
       ),
     ),
   );
@@ -154,6 +243,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'entityreference_label',
           'weight' => 4,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -235,6 +330,12 @@ function club_attendance_field_default_fields() {
           'type' => 'date_default',
           'weight' => 1,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -267,7 +368,7 @@ function club_attendance_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -318,6 +419,12 @@ function club_attendance_field_default_fields() {
           'type' => 'text_default',
           'weight' => 3,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -340,7 +447,442 @@ function club_attendance_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-action_trigger_mass_makeup-field_attendance'.
+  $fields['node-action_trigger_mass_makeup-field_attendance'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_attendance',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'attendance',
+            'parent' => '0',
+          ),
+        ),
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'action_trigger_mass_makeup',
+      'default_value' => array(
+        0 => array(
+          'tid' => '8',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Attendance type',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 2,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_attendance',
+      'label' => 'Default Type',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '7',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-action_trigger_mass_makeup-field_date'.
+  $fields['node-action_trigger_mass_makeup-field_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'profile2_private' => FALSE,
+        'repeat' => '0',
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
+      ),
+      'translatable' => '0',
+      'type' => 'datetime',
+    ),
+    'field_instance' => array(
+      'bundle' => 'action_trigger_mass_makeup',
+      'deleted' => '0',
+      'description' => 'Date of the meeting/event',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 3,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_date',
+      'label' => 'Meeting/Event Date',
+      'required' => 1,
+      'settings' => array(
+        'default_value' => 'now',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'increment' => '15',
+          'input_format' => 'm/d/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-action_trigger_mass_makeup-field_description'.
+  $fields['node-action_trigger_mass_makeup-field_description'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_description',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'action_trigger_mass_makeup',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'An optional extended description of the event',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 1,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_description',
+      'label' => 'Extended Description',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-action_trigger_mass_makeup-field_makeup_title'.
+  $fields['node-action_trigger_mass_makeup-field_makeup_title'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_makeup_title',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'action_trigger_mass_makeup',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Title of this makeup/event (e.g. "Board Meeting", "High School Cleanup", "Committee Meeting")',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 5,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_makeup_title',
+      'label' => 'Makeup Title',
+      'required' => 1,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-action_trigger_mass_makeup-field_members'.
+  $fields['node-action_trigger_mass_makeup-field_members'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_members',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'field' => 'field_last_name:value',
+            'type' => 'field',
+          ),
+          'target_bundles' => array(),
+        ),
+        'profile2_private' => FALSE,
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'action_trigger_mass_makeup',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'List of members attending this event',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 4,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'entityconnect_unload_add' => '0',
+      'entityconnect_unload_edit' => '0',
+      'field_name' => 'field_members',
+      'label' => 'Members',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'options_select',
+        'weight' => '9',
       ),
     ),
   );
@@ -399,6 +941,12 @@ function club_attendance_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '2',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -487,6 +1035,12 @@ function club_attendance_field_default_fields() {
           'type' => 'hidden',
           'weight' => '6',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -564,6 +1118,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'date_default',
           'weight' => '0',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -648,6 +1208,12 @@ function club_attendance_field_default_fields() {
           'type' => 'text_default',
           'weight' => '5',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -725,6 +1291,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'date_default',
           'weight' => '3',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -806,6 +1378,12 @@ function club_attendance_field_default_fields() {
           'settings' => array(),
           'type' => 'list_default',
           'weight' => '4',
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -895,6 +1473,12 @@ function club_attendance_field_default_fields() {
           'type' => 'entityreference_label',
           'weight' => '1',
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -968,6 +1552,12 @@ function club_attendance_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => 0,
         ),
         'teaser' => array(
@@ -1049,6 +1639,12 @@ function club_attendance_field_default_fields() {
           'type' => 'list_default',
           'weight' => 11,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1106,6 +1702,12 @@ function club_attendance_field_default_fields() {
           'settings' => array(),
           'type' => 'email_default',
           'weight' => 10,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1171,6 +1773,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'number_integer',
           'weight' => 7,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1266,6 +1874,12 @@ function club_attendance_field_default_fields() {
           'type' => 'entityreference_label',
           'weight' => 21,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1339,6 +1953,12 @@ function club_attendance_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 20,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1414,6 +2034,12 @@ function club_attendance_field_default_fields() {
           'type' => 'list_default',
           'weight' => 19,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1485,6 +2111,12 @@ function club_attendance_field_default_fields() {
           'type' => 'list_default',
           'weight' => 4,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1547,6 +2179,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'number_integer',
           'weight' => 9,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1615,6 +2253,12 @@ function club_attendance_field_default_fields() {
           'type' => 'number_integer',
           'weight' => 8,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1681,6 +2325,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'number_integer',
           'weight' => 5,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1760,6 +2410,12 @@ function club_attendance_field_default_fields() {
           'type' => 'text_default',
           'weight' => 18,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1837,6 +2493,12 @@ function club_attendance_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 6,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1918,6 +2580,12 @@ function club_attendance_field_default_fields() {
           ),
           'type' => 'date_default',
           'weight' => 16,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -2007,6 +2675,12 @@ function club_attendance_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => 22,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2078,6 +2752,12 @@ function club_attendance_field_default_fields() {
           'type' => 'list_default',
           'weight' => 13,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2136,6 +2816,12 @@ function club_attendance_field_default_fields() {
           'type' => 'email_default',
           'weight' => 14,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2158,6 +2844,185 @@ function club_attendance_field_default_fields() {
         ),
         'type' => 'email_textfield',
         'weight' => '18',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-mass_makeup-body'.
+  $fields['node-mass_makeup-body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'node',
+      ),
+      'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '1',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'mass_makeup',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'body',
+      'label' => 'Body',
+      'required' => FALSE,
+      'settings' => array(
+        'display_summary' => TRUE,
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 20,
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '31',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-mass_makeup-field_chapter'.
+  $fields['node-mass_makeup-field_chapter'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_chapter',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'behaviors' => array(),
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'property' => 'title',
+            'type' => 'property',
+          ),
+          'target_bundles' => array(
+            'chapter' => 'chapter',
+          ),
+        ),
+        'handler_submit' => 'Change handler',
+        'profile2_private' => FALSE,
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'mass_makeup',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 1,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_chapter',
+      'label' => 'Chapter/Club',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '33',
       ),
     ),
   );
@@ -2204,6 +3069,12 @@ function club_attendance_field_default_fields() {
           'type' => 'list_default',
           'weight' => 0,
         ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_statistic',
@@ -2224,16 +3095,21 @@ function club_attendance_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('An optional extended description of the event');
   t('Append Policy');
   t('Attendance');
   t('Attendance Admin Email');
   t('Attendance Policy');
   t('Attendance Requirement');
+  t('Attendance Title');
+  t('Attendance type');
+  t('Body');
   t('Chapter or Club');
   t('Chapter or club reference');
   t('Chapter/Club');
   t('Club/Chapter');
   t('Date');
+  t('Date of the meeting/event');
   t('Default Type');
   t('Describe the attendance rules in detail. These may be emailed to users if violations are detected.');
   t('Determines the attendance statistic for reporting purposes - Absent, Present or Not Counted.');
@@ -2246,8 +3122,10 @@ function club_attendance_field_default_fields() {
   t('If make-ups are allowed, they are treated in one of two ways: (1) Manual Update or (2) Automatic. <UL><LI>Manual Update: with this policy, regular meeting records are updated manually. For example, Rotary clubs allow a make-up two weeks before or two weeks after the missed meeting. In this case, the club secretary would pull up the list of meetings, select an appropriate missed meeting, and update its status from "Absent" to "Makeup". The Attendance Report will report this meeting in the Make-up column, not in the Absent column<LI>Automatic: with this policy, make-ups are added separately. The Attendance Report will report this meeting in the Make-Up column and will automatically reduce the Absent column by 1. </UL> The advantage of "Automatic" is that a full history of missed and made-up meetings is retained. The advantage of "Manual" is that you have control over make-up application.');
   t('If members are to receive a "Missed Meeting" message, should the system append the Attendance Policy to the email sent to them? This field has no effect if the "Missed Meeting" message is blank.');
   t('If you are using the "Attendance Trigger" process, select one or more status values to include in the automated member inclusion.');
+  t('List of members attending this event');
   t('Make-up Policy');
   t('Makeup \'No Count\' Notation');
+  t('Makeup Title');
   t('Makeups Allowed');
   t('Makeups are reports on all reports. If they are not counted in the totals, this field contains the report annotation reminder.');
   t('Maximum Consecutive Missed Meetings');
@@ -2255,6 +3133,7 @@ function club_attendance_field_default_fields() {
   t('Maximum Number of Makeups allowed');
   t('Maximum number of makeups allowed during this notification period. Enter "0" if there is no set maximum or if makeup meetings are not part of your attendance policy.');
   t('Meeting/Event Date');
+  t('Members');
   t('Missed Email Subject - the subject of the email reminder sent to people who miss meetings.');
   t('Missed Subject');
   t('Missed You Message');
@@ -2268,6 +3147,7 @@ function club_attendance_field_default_fields() {
   t('Status Inclusions');
   t('Test');
   t('Test Email Address');
+  t('The title of the attendance (e.g. "Regular Meeting", "WCS Meeting", "Mixer", etc.)');
   t('These fields contain the start and end date for this Attendance Policy. ');
   t('This field contains the maximum number of allowable missed meetings before Board action is required. For example, if "Attendance Requirement" is 50%, and there are 26 meetings in the notification period, then this field should contain "13" -- that is, when 13 meetings are missed, some type of board action is required.  Leave this field blank if this is not part of your attendance policy.');
   t('This field contains the percentage of total meetings required to maintain active member status. This is used for management reporting only.  Leave this field blank if you do not have a required attendance policy.');
@@ -2275,6 +3155,7 @@ function club_attendance_field_default_fields() {
   t('This is email address that emails will be sent to if "Test" is set to \'Yes\'. If "Test" is set to \'No\', entries in this field will have no effect. An error will be generated if "Test" is set to "Yes" and there is no email address in this field.');
   t('This is the chapter or club record that "owns" this attendance policy.');
   t('This is the date this attendance record was processed. ');
+  t('Title of this makeup/event (e.g. "Board Meeting", "High School Cleanup", "Committee Meeting")');
   t('Uid');
   t('Whether or not makeups are allowed. The specific nature of makeups should be described in the "Attendance Policy".');
   t('Whether or not this attendance record has been processed. If you change this field from "Yes" to "No", attendance will be processed again.');

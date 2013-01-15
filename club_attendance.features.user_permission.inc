@@ -20,6 +20,16 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create action_trigger_mass_makeup content.
+  $permissions['create action_trigger_mass_makeup content'] = array(
+    'name' => 'create action_trigger_mass_makeup content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: create attendance content.
   $permissions['create attendance content'] = array(
     'name' => 'create attendance content',
@@ -40,6 +50,16 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: create mass_makeup content.
+  $permissions['create mass_makeup content'] = array(
+    'name' => 'create mass_makeup content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: delete any action_trigger_attendance content.
   $permissions['delete any action_trigger_attendance content'] = array(
     'name' => 'delete any action_trigger_attendance content',
@@ -47,6 +67,13 @@ function club_attendance_user_default_permissions() {
       0 => 'Attendance',
       1 => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete any action_trigger_mass_makeup content.
+  $permissions['delete any action_trigger_mass_makeup content'] = array(
+    'name' => 'delete any action_trigger_mass_makeup content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -67,9 +94,26 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete any mass_makeup content.
+  $permissions['delete any mass_makeup content'] = array(
+    'name' => 'delete any mass_makeup content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: delete own action_trigger_attendance content.
   $permissions['delete own action_trigger_attendance content'] = array(
     'name' => 'delete own action_trigger_attendance content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: delete own action_trigger_mass_makeup content.
+  $permissions['delete own action_trigger_mass_makeup content'] = array(
+    'name' => 'delete own action_trigger_mass_makeup content',
     'roles' => array(
       0 => 'Attendance',
       1 => 'administrator',
@@ -97,9 +141,29 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: delete own mass_makeup content.
+  $permissions['delete own mass_makeup content'] = array(
+    'name' => 'delete own mass_makeup content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit any action_trigger_attendance content.
   $permissions['edit any action_trigger_attendance content'] = array(
     'name' => 'edit any action_trigger_attendance content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit any action_trigger_mass_makeup content.
+  $permissions['edit any action_trigger_mass_makeup content'] = array(
+    'name' => 'edit any action_trigger_mass_makeup content',
     'roles' => array(
       0 => 'Attendance',
       1 => 'administrator',
@@ -127,9 +191,29 @@ function club_attendance_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: edit any mass_makeup content.
+  $permissions['edit any mass_makeup content'] = array(
+    'name' => 'edit any mass_makeup content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: edit own action_trigger_attendance content.
   $permissions['edit own action_trigger_attendance content'] = array(
     'name' => 'edit own action_trigger_attendance content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own action_trigger_mass_makeup content.
+  $permissions['edit own action_trigger_mass_makeup content'] = array(
+    'name' => 'edit own action_trigger_mass_makeup content',
     'roles' => array(
       0 => 'Attendance',
       1 => 'administrator',
@@ -150,6 +234,16 @@ function club_attendance_user_default_permissions() {
   // Exported permission: edit own attendance_configuration content.
   $permissions['edit own attendance_configuration content'] = array(
     'name' => 'edit own attendance_configuration content',
+    'roles' => array(
+      0 => 'Attendance',
+      1 => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: edit own mass_makeup content.
+  $permissions['edit own mass_makeup content'] = array(
+    'name' => 'edit own mass_makeup content',
     'roles' => array(
       0 => 'Attendance',
       1 => 'administrator',
