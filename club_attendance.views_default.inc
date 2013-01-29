@@ -106,7 +106,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['relationships']['field_uid_target_id']['table'] = 'field_data_field_uid';
   $handler->display->display_options['relationships']['field_uid_target_id']['field'] = 'field_uid_target_id';
   $handler->display->display_options['relationships']['field_uid_target_id']['required'] = 1;
-  /* Field: Content: Uid */
+  /* Field: Content: Member */
   $handler->display->display_options['fields']['field_uid']['id'] = 'field_uid';
   $handler->display->display_options['fields']['field_uid']['table'] = 'field_data_field_uid';
   $handler->display->display_options['fields']['field_uid']['field'] = 'field_uid';
@@ -1065,7 +1065,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Edit';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = 1;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'view-attendance-policy#overlay=node/[nid]/edit';
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'node/[nid]/edit';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['external'] = 0;
   $handler->display->display_options['fields']['nothing_1']['alter']['replace_spaces'] = 0;
@@ -1090,7 +1090,7 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Clone';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'view-attendance-policy#overlay=node/[nid]/clone';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/clone';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
@@ -1107,11 +1107,10 @@ function club_attendance_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Field: Chapter/Club (field_chapter) */
+  $handler->display->display_options['sorts']['field_chapter_target_id']['id'] = 'field_chapter_target_id';
+  $handler->display->display_options['sorts']['field_chapter_target_id']['table'] = 'field_data_field_chapter';
+  $handler->display->display_options['sorts']['field_chapter_target_id']['field'] = 'field_chapter_target_id';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1421,7 +1420,7 @@ return TRUE;';
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  /* Field: Content: Uid */
+  /* Field: Content: Member */
   $handler->display->display_options['fields']['field_uid']['id'] = 'field_uid';
   $handler->display->display_options['fields']['field_uid']['table'] = 'field_data_field_uid';
   $handler->display->display_options['fields']['field_uid']['field'] = 'field_uid';
@@ -1656,7 +1655,7 @@ return TRUE;';
 ?>';
   $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
-  /* Sort criterion: Content: Uid (field_uid) */
+  /* Sort criterion: Content: Member (field_uid) */
   $handler->display->display_options['sorts']['field_uid_target_id']['id'] = 'field_uid_target_id';
   $handler->display->display_options['sorts']['field_uid_target_id']['table'] = 'field_data_field_uid';
   $handler->display->display_options['sorts']['field_uid_target_id']['field'] = 'field_uid_target_id';

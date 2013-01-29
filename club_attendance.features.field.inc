@@ -182,7 +182,7 @@ function club_attendance_field_default_fields() {
   $fields['node-action_trigger_attendance-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
@@ -586,6 +586,7 @@ function club_attendance_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
           'weight' => 3,
@@ -622,6 +623,7 @@ function club_attendance_field_default_fields() {
           'input_format' => 'm/d/Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
+          'repeat_collapsed' => 0,
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -976,7 +978,7 @@ function club_attendance_field_default_fields() {
   $fields['node-attendance-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
@@ -1445,9 +1447,8 @@ function club_attendance_field_default_fields() {
           ),
           'sort' => array(
             'direction' => 'ASC',
-            'field' => 'field_birthdate:value',
-            'property' => 'uid',
-            'type' => 'none',
+            'field' => 'field_last_name:value',
+            'type' => 'field',
           ),
           'target_bundles' => array(),
         ),
@@ -1812,7 +1813,7 @@ function club_attendance_field_default_fields() {
   $fields['node-attendance_configuration-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
@@ -2936,7 +2937,7 @@ function club_attendance_field_default_fields() {
   $fields['node-mass_makeup-field_chapter'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_chapter',
