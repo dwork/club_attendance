@@ -72,7 +72,7 @@ function club_attendance_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-49',
-    'parent_path' => 'node/add/attendance-editable',
+    'parent_path' => '<nolink>',
   );
   // Exported menu link: menu-attendance:attendance-summary-by-user
   $menu_links['menu-attendance:attendance-summary-by-user'] = array(
@@ -133,7 +133,7 @@ function club_attendance_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-48',
-    'parent_path' => 'node/add/attendance-editable',
+    'parent_path' => '<nolink>',
   );
   // Exported menu link: menu-attendance:node/add/action-trigger-mass-makeup
   $menu_links['menu-attendance:node/add/action-trigger-mass-makeup'] = array(
@@ -152,7 +152,7 @@ function club_attendance_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '0',
-    'parent_path' => 'node/add/attendance-editable',
+    'parent_path' => '<nolink>',
   );
   // Exported menu link: menu-attendance:node/add/attendance
   $menu_links['menu-attendance:node/add/attendance'] = array(
@@ -171,25 +171,7 @@ function club_attendance_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-50',
-    'parent_path' => 'node/add/attendance-editable',
-  );
-  // Exported menu link: menu-attendance:node/add/attendance-editable
-  $menu_links['menu-attendance:node/add/attendance-editable'] = array(
-    'menu_name' => 'menu-attendance',
-    'link_path' => 'node/add/attendance-editable',
-    'router_path' => 'node/add',
-    'link_title' => 'Editing',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '1',
-    'expanded' => '1',
-    'weight' => '-48',
+    'parent_path' => '<nolink>',
   );
   // Exported menu link: menu-attendance:view-attendance-policy
   $menu_links['menu-attendance:view-attendance-policy'] = array(
@@ -216,7 +198,6 @@ function club_attendance_menu_default_menu_links() {
   t('Attendance Documentation');
   t('Attendance Policies');
   t('Details (by Member)');
-  t('Editing');
   t('Maintenance (Indv)');
   t('Mass Entry');
   t('Mass Makeups');
