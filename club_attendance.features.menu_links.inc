@@ -25,6 +25,24 @@ function club_attendance_menu_default_menu_links() {
     'weight' => '0',
     'parent_path' => 'admin/structure/menu',
   );
+  // Exported menu link: menu-attendance:<nolink>
+  $menu_links['menu-attendance:<nolink>'] = array(
+    'menu_name' => 'menu-attendance',
+    'link_path' => '<nolink>',
+    'router_path' => '<nolink>',
+    'link_title' => 'Editing',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '1',
+    'expanded' => '1',
+    'weight' => '-48',
+  );
   // Exported menu link: menu-attendance:attendance-detail
   $menu_links['menu-attendance:attendance-detail'] = array(
     'menu_name' => 'menu-attendance',
@@ -198,6 +216,7 @@ function club_attendance_menu_default_menu_links() {
   t('Attendance Documentation');
   t('Attendance Policies');
   t('Details (by Member)');
+  t('Editing');
   t('Maintenance (Indv)');
   t('Mass Entry');
   t('Mass Makeups');
