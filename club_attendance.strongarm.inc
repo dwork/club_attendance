@@ -13,6 +13,13 @@ function club_attendance_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_action_trigger_attendance';
+  $strongarm->value = '1';
+  $export['ant_action_trigger_attendance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_action_trigger_attendance';
   $strongarm->value = '2';
   $export['comment_action_trigger_attendance'] = $strongarm;
