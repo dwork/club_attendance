@@ -52,10 +52,10 @@ function club_attendance_field_group_info() {
     'label' => 'Make Ups',
     'weight' => '7',
     'children' => array(
-      0 => 'field_makeupsallowed',
-      1 => 'field_maxmakeups',
-      2 => 'field_makeup_policy',
-      3 => 'field_makeup_notation',
+      0 => 'field_makeup_notation',
+      1 => 'field_makeup_policy',
+      2 => 'field_makeupsallowed',
+      3 => 'field_maxmakeups',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -82,11 +82,12 @@ function club_attendance_field_group_info() {
     'label' => 'Missed Meetings',
     'weight' => '8',
     'children' => array(
-      0 => 'field_missedyoumessage',
-      1 => 'field_maximum_missed',
-      2 => 'field_maximum_consecutive',
-      3 => 'field_appendpolicy',
-      4 => 'field_missed_subject',
+      0 => 'field_appendpolicy',
+      1 => 'field_maximum_consecutive',
+      2 => 'field_maximum_missed',
+      3 => 'field_missed_subject',
+      4 => 'field_missedyoumessage',
+      5 => 'field_tardies',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

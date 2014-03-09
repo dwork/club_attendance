@@ -116,8 +116,8 @@ function club_attendance_content_menu_links_defaults() {
     'expanded' => '0',
     'weight' => '-46',
   );
-  // Exported menu link: menu-attendance:node/55
-  $menu_links['menu-attendance:node/55'] = array(
+  // Exported menu link: menu-attendance:node/12
+  $menu_links['menu-attendance:node/12'] = array(
     'menu_name' => 'menu-attendance',
     'link_path' => 'node-name/Attendance Docs',
     'router_path' => 'node/%',
@@ -139,7 +139,7 @@ function club_attendance_content_menu_links_defaults() {
     'menu_name' => 'menu-attendance',
     'link_path' => 'node/add/action-trigger-attendance',
     'router_path' => 'node/add/action-trigger-attendance',
-    'link_title' => 'Mass Entry',
+    'link_title' => 'Meeting Entry (Mass)',
     'options' => array(
       'attributes' => array(
         'title' => 'Regular attendance entry - select this option to (1) generate an attendance entry for every active member (see "attendance policy" for member status inclusion, and (2) pull up the attendance entries for maintenance. That is, active attendance records are generate for each member with an appropriate status (e.g. "Active", "Honorary"). A maintenance screen is then provided to allow you to mark absences or makeups.',
@@ -165,7 +165,7 @@ function club_attendance_content_menu_links_defaults() {
       ),
     ),
     'module' => 'menu',
-    'hidden' => '0',
+    'hidden' => '1',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
@@ -218,8 +218,8 @@ function club_attendance_content_menu_links_defaults() {
   t('Details (by Member)');
   t('Editing');
   t('Maintenance (Indv)');
-  t('Mass Entry');
   t('Mass Makeups');
+  t('Meeting Entry (Mass)');
   t('Summary Report');
 
 

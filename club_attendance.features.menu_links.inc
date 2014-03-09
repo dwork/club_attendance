@@ -116,30 +116,12 @@ function club_attendance_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '-46',
   );
-  // Exported menu link: menu-attendance:node/55
-  $menu_links['menu-attendance:node/55'] = array(
-    'menu_name' => 'menu-attendance',
-    'link_path' => 'node/55',
-    'router_path' => 'node/%',
-    'link_title' => 'Attendance Documentation',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-50',
-  );
   // Exported menu link: menu-attendance:node/add/action-trigger-attendance
   $menu_links['menu-attendance:node/add/action-trigger-attendance'] = array(
     'menu_name' => 'menu-attendance',
     'link_path' => 'node/add/action-trigger-attendance',
     'router_path' => 'node/add/action-trigger-attendance',
-    'link_title' => 'Mass Entry',
+    'link_title' => 'Meeting Entry (Mass)',
     'options' => array(
       'attributes' => array(
         'title' => 'Regular attendance entry - select this option to (1) generate an attendance entry for every active member (see "attendance policy" for member status inclusion, and (2) pull up the attendance entries for maintenance. That is, active attendance records are generate for each member with an appropriate status (e.g. "Active", "Honorary"). A maintenance screen is then provided to allow you to mark absences or makeups.',
@@ -165,7 +147,7 @@ function club_attendance_menu_default_menu_links() {
       ),
     ),
     'module' => 'menu',
-    'hidden' => '0',
+    'hidden' => '1',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
@@ -213,13 +195,12 @@ function club_attendance_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Add (Individual)');
   t('Attendance');
-  t('Attendance Documentation');
   t('Attendance Policies');
   t('Details (by Member)');
   t('Editing');
   t('Maintenance (Indv)');
-  t('Mass Entry');
   t('Mass Makeups');
+  t('Meeting Entry (Mass)');
   t('Summary Report');
 
 

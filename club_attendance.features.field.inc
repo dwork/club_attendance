@@ -258,10 +258,11 @@ function club_attendance_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'entityconnect_unload_add' => '0',
-      'entityconnect_unload_edit' => '0',
+      'entityconnect_unload_add' => '1',
+      'entityconnect_unload_edit' => '1',
       'field_name' => 'field_chapter',
       'label' => 'Club/Chapter',
+      'readmore_behaviour' => 'default',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -271,7 +272,7 @@ function club_attendance_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -795,7 +796,7 @@ function club_attendance_field_default_fields() {
   $fields['node-action_trigger_mass_makeup-field_members'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '5',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_members',
@@ -1665,7 +1666,7 @@ function club_attendance_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '13',
+        'weight' => '16',
       ),
     ),
   );
@@ -2210,7 +2211,7 @@ function club_attendance_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '15',
+        'weight' => '18',
       ),
     ),
   );
@@ -2283,7 +2284,7 @@ function club_attendance_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '14',
+        'weight' => '17',
       ),
     ),
   );
@@ -2439,7 +2440,7 @@ function club_attendance_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '11',
+        'weight' => '14',
       ),
     ),
   );
@@ -2523,7 +2524,7 @@ function club_attendance_field_default_fields() {
           'rows' => '4',
         ),
         'type' => 'text_textarea',
-        'weight' => '12',
+        'weight' => '15',
       ),
     ),
   );
@@ -2702,6 +2703,78 @@ function club_attendance_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-attendance_configuration-field_tardies'.
+  $fields['node-attendance_configuration-field_tardies'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_tardies',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'attendance_configuration',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'How many tardies constitute an absence? 0 = not counted',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 23,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_tardies',
+      'label' => 'Tardies',
+      'readmore_behaviour' => 'default',
+      'required' => 0,
+      'settings' => array(
+        'max' => '52',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(),
+        'type' => 'number',
+        'weight' => '13',
       ),
     ),
   );
@@ -3119,6 +3192,7 @@ function club_attendance_field_default_fields() {
   t('Enter the club/chapter this attendance record refers to.');
   t('Enter the meeting or event date. This will trigger a set of "nodes" for each active member for this date and type.');
   t('Extended Description');
+  t('How many tardies constitute an absence? 0 = not counted');
   t('If attendance reporting is to be emailed, enter one or more email addresses for the attendance administrators. For example, you might enter the Attendance Committee Chair\'s address and the Organization\'s President for each report.');
   t('If make-ups are allowed, they are treated in one of two ways: (1) Manual Update or (2) Automatic. <UL><LI>Manual Update: with this policy, regular meeting records are updated manually. For example, Rotary clubs allow a make-up two weeks before or two weeks after the missed meeting. In this case, the club secretary would pull up the list of meetings, select an appropriate missed meeting, and update its status from "Absent" to "Makeup". The Attendance Report will report this meeting in the Make-up column, not in the Absent column<LI>Automatic: with this policy, make-ups are added separately. The Attendance Report will report this meeting in the Make-Up column and will automatically reduce the Absent column by 1. </UL> The advantage of "Automatic" is that a full history of missed and made-up meetings is retained. The advantage of "Manual" is that you have control over make-up application.');
   t('If members are to receive a "Missed Meeting" message, should the system append the Attendance Policy to the email sent to them? This field has no effect if the "Missed Meeting" message is blank.');
@@ -3146,6 +3220,7 @@ function club_attendance_field_default_fields() {
   t('Some organizations may have an attendance policy that discourages consecutive missed meetings. For example, if some type of Board action is required after 5 consecutive missed meetings, enter "5". When the number of consecutive missed meetings reaches 6, an email is sent to the attendance contact email address(es). Leave this field blank if this is not part of your attendance policy.');
   t('Statistic');
   t('Status Inclusions');
+  t('Tardies');
   t('Test');
   t('Test Email Address');
   t('The title of the attendance (e.g. "Regular Meeting", "WCS Meeting", "Mixer", etc.)');

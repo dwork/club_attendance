@@ -179,14 +179,14 @@ Recording attendance can be done individually or using the "mass attendance proc
   );
 
   $content['Default Attendance Policy'] = (object) array(
-    'exported_path' => 'content/attendance-policy-0',
-    'title' => 'Attendance Policy',
+    'exported_path' => 'content/attendance-policy-m-starts',
+    'title' => 'Attendance Policy (M Starts)',
     'status' => '1',
     'promote' => '0',
     'sticky' => '0',
     'type' => 'attendance_configuration',
     'language' => 'und',
-    'created' => '1357671186',
+    'created' => '1359994478',
     'comment' => '1',
     'translate' => '0',
     'machine_name' => 'Default Attendance Policy',
@@ -194,10 +194,12 @@ Recording attendance can be done individually or using the "mass attendance proc
       'und' => array(
         0 => array(
           'value' => '<p>Attendance Policy here.</p>
+<p>&nbsp;</p>
 ',
           'summary' => '',
           'format' => 'filtered_html',
-          'safe_value' => '<p>Attendance Policy here.</p>
+          'safe_value' => '<p>Attendance Policy here.<br />
+ </p>
 ',
           'safe_summary' => '',
         ),
@@ -220,17 +222,10 @@ Recording attendance can be done individually or using the "mass attendance proc
         ),
       ),
     ),
-    'field_attendancerequirement' => array(
-      'und' => array(
-        0 => array(
-          'value' => '50',
-        ),
-      ),
-    ),
     'field_chapter' => array(
       'und' => array(
         0 => array(
-          'target_id' => '9',
+          'target_id' => '14',
         ),
       ),
     ),
@@ -253,21 +248,21 @@ Recording attendance can be done individually or using the "mass attendance proc
     'field_makeupsallowed' => array(
       'und' => array(
         0 => array(
-          'value' => 'Yes',
+          'value' => 'No',
         ),
       ),
     ),
     'field_maximum_consecutive' => array(
       'und' => array(
         0 => array(
-          'value' => '5',
+          'value' => '3',
         ),
       ),
     ),
     'field_maximum_missed' => array(
       'und' => array(
         0 => array(
-          'value' => '13',
+          'value' => '3',
         ),
       ),
     ),
@@ -305,8 +300,8 @@ Your club',
     'field_policy_date_range' => array(
       'und' => array(
         0 => array(
-          'value' => '2013-01-01 00:00:00',
-          'value2' => '2013-12-31 00:00:00',
+          'value' => '2014-01-01 00:00:00',
+          'value2' => '2014-12-31 00:00:00',
           'timezone' => 'America/Los_Angeles',
           'timezone_db' => 'America/Los_Angeles',
           'date_type' => 'datetime',
@@ -331,6 +326,13 @@ Your club',
       'und' => array(
         0 => array(
           'email' => 'dwork@oip.net',
+        ),
+      ),
+    ),
+    'field_tardies' => array(
+      'und' => array(
+        0 => array(
+          'value' => '3',
         ),
       ),
     ),

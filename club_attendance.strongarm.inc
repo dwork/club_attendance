@@ -327,6 +327,15 @@ function club_attendance_strongarm() {
         'path' => array(
           'weight' => '2',
         ),
+        'metatags' => array(
+          'weight' => '10',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
